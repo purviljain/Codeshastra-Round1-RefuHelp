@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+ <html>
+     <head>
+        <!-- Is anyone getting tired of repeatedly entering the header over and over?? -->
+         <title>Rango</title>
+     </head>
+
+     <body>
+
+       <form method='POST'>
+       {% csrf_token %}
+       reason <input type="text" name="reason"><br>
+       location <input type="text" name="location"><br>
+       Date<input type="datetime-local" name="date">
+       <input type="submit" name="Submit">
+     </form>
+     {% if error %}
+       <p>{{ error }}</p>
+     {% endif %}
+     </body>
+ </html>

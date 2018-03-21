@@ -1,0 +1,6 @@
+<form action="{% url 'app:create_ngo_petition' %}" method="post">
+    {% csrf_token %}
+    Title: <input type="text" name="title"><br>
+    Description: <input type="text" name="description"><br>
+    <input type="submit" value="Submit"><br>
+</form>

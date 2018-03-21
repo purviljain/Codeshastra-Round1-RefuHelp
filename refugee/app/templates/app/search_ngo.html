@@ -1,0 +1,14 @@
+
+<form action="" method="get">
+  Search <input type="text" name="search_ngo"><br>
+  <input type="submit">
+</form>
+
+{% if ngo %}
+  {% for ngo1 in ngo %}
+    <h1>{{ ngo1.name }}</h1>
+  {% endfor %}
+{% endif %}
+{% if error %}
+  <h1>NO MATCHES FOUND</h1>
+{% endif %}

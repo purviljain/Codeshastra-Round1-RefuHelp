@@ -1,0 +1,42 @@
+<html>
+    <head>
+        <title>Refugee</title>
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+        <link href='//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+    </head>
+    <body>
+    <div class="content container">
+        <div class="row">
+            <div class="col-md-8">
+              <h1>Register</h1>
+
+            <form method='POST' enctype="multipart/form-data">
+            {% csrf_token %}
+            Username<input type="text" name="username"><br>
+            Email <input type="email" name="email"><br>
+            Password <input type="password" name="password"><br>
+            FirstName<input type="text" name="fname"><br>
+            LastName <input type="text" name="lname"><br>
+            Bio <input type="text" name="bio"><br>
+            Country <input type="text" name="country"><br>
+            Age<input type="text" name="age"><br>
+            mobileNo <input type="text" name="mobileNo"><br>
+            Gender<select name="gender">
+              <option selected="selected" disabled>Objects on page:</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+            </select>
+            Passport<input type="file" name="passport">
+            Photo<input type="file" name="passport">
+            <input type="submit" name="Submit">
+          </form>
+
+          {% if error %}
+            <p>{{ error }}</p>
+          {% endif %}
+            </div>
+        </div>
+    </div>
+</body>
+</html>

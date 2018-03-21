@@ -1,0 +1,8 @@
+<h1>{{ petition.title }}</h1>
+<p>{{ petition.description }}</p>
+
+<form action="{% url 'app:vote_refugee_petition' pk=petition.id %}" method="post">
+    {% csrf_token %}
+    Email: <input type="email" name="email"><br>
+    <input type="submit" value="Vote">
+</form>

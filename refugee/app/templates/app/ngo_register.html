@@ -1,0 +1,13 @@
+<form action="{% url 'app:ngo_register' %}" method='post'>
+    {% csrf_token %}
+    Name: <input type="text" name="name"><br>
+    Email: <input type="email" name="email"><br>
+    Country: <input type="text" name="country"><br>
+    NGO ID: <input type="text" name="ngo_id"><br>
+    Password: <input type="password" name="password"><br>
+    <input type="submit" value="Submit"><br>
+</form>
+
+{% if error %}
+<h1>{{ error }}</h1>
+{% endif %}

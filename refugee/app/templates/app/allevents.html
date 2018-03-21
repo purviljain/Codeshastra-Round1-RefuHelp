@@ -1,0 +1,7 @@
+{% for notification in event %}
+<h3>{{ notification.startedBy }}</h3>
+<h5>{{ notification.reason }}</h5>
+<h5>{{ notification.date }}</h5>
+<h5>{{ notification.location }}</h5>
+<br>
+{% endfor %}

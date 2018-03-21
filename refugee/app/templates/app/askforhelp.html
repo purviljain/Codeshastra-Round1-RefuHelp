@@ -1,0 +1,26 @@
+<form method='post'>
+    {% csrf_token %}
+    Enter your help: <input type="text" name="helpof"><br>
+    Enter NGO to send Query:
+    <select name="askto"> <br>
+      {% for x in all_ngo %}
+        <option value= {{x}}>{{x}}</option>
+      {% endfor %}
+    </select>
+    <br/>
+    <br/> <br> <br>
+    Description: <input type="text" name="description"><br><br>
+    Priority
+    <select name="gender">
+      <option selected="selected" disabled>Objects on page:</option>
+      <option value="Very High">Very High</option>
+      <option value="High">High</option>
+      <option value="Medium">Medium</option>
+      <option value="Low">Low</option>
+    </select>
+    <input type="submit" value="Submit"><br>
+</form>
+
+{% if error %}
+<h1>{{ error }}</h1>
+{% endif %}

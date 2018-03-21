@@ -1,0 +1,15 @@
+<form action="" method="get">
+  Search <input type="text" name="search_refugee"><br>
+  <input type="submit">
+</form>
+
+{% if r %}
+  {% for refuge in r %}
+    <h1>{{ refuge.refugee.first_name }} {{ refuge.refugee.last_name }}</h1>
+  {% endfor %}
+{% endif %}
+
+
+{% if error %}
+  <h1>NO MATCHES FOUND</h1>
+{% endif %}
